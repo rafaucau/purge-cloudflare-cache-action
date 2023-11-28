@@ -5,7 +5,7 @@ import Sitemapper from 'sitemapper';
 import {chunk, uniq} from 'lodash-es';
 
 // Internal dependencies
-import checkAuthInput from './checkAuthInput';
+import checkAuthInput from './checkAuthInput.js';
 
 const zoneId = core.getInput('zone', {required: true});
 
@@ -51,6 +51,7 @@ async function run() {
   //
   const sitemapUrl = core.getInput('sitemap');
   if (sitemapUrl.length) {
+    // @ts-ignore
     const sitemap = new Sitemapper({url: sitemapUrl, timeout: 60000});
 
     await sitemap

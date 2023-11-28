@@ -13,13 +13,13 @@ jobs:
 
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 20
           cache: npm
-      - run: npm install
+      - run: npm ci
       - run: npm run build
 
       - name: Git Auto Commit
-        uses: stefanzweifel/git-auto-commit-action@v4.14.1
+        uses: stefanzweifel/git-auto-commit-action@v5
         with:
           file_pattern: dist
           commit_message: 'Bundled output for commit ${{ github.sha }}'

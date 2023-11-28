@@ -1,9 +1,15 @@
 {
-  "extends": "@tsconfig/node16/tsconfig.json",
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "@tsconfig/node20/tsconfig.json",
   "compilerOptions": {
-    "module": "Node16",
+    "lib": ["es2023"],
+    "module": "node16",
+    "target": "es2022",
     "rootDir": "./src",
-    "outDir": "./lib"
+    "outDir": "./lib",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "strict": false
   },
   "exclude": ["node_modules"]
 }
